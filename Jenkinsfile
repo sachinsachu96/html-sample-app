@@ -23,5 +23,16 @@ pipeline {
                 ])
             }
         }
+
+    stage('pull changes') {
+            steps {
+                script {
+                    // Perform Git operations
+                    sh '''
+                        git pull origin master --ff
+                    '''
+                }
+            }
+        }
     }
 }
